@@ -12,10 +12,13 @@ func main() {
 	if err != nil {
 		exit("Failed to parse the provided CSV file.")
 	}
+
+	operation := questions.SelectOperation()
+
 	correct := 0
 	//for i, p := range problems {
 	for i := range problems {
-		if questions.Present(i, questions.GetProblem("subtraction", 999)) {
+		if questions.Present(i, questions.GetProblem(operation, 999)) {
 			correct++
 		}
 		/*if questions.Present(i, p) {
