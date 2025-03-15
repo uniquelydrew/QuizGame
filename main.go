@@ -15,7 +15,7 @@ func main() {
 	correct := 0
 	//for i, p := range problems {
 	for i := range problems {
-		if questions.Present(i, questions.GetProblem()) {
+		if questions.Present(i, questions.GetProblem("subtraction", 999)) {
 			correct++
 		}
 		/*if questions.Present(i, p) {

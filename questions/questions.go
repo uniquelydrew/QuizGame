@@ -4,10 +4,8 @@ import (
 	"encoding/csv"
 	"flag"
 	"fmt"
-	"math/rand"
 	"os"
 	"strings"
-	"time"
 )
 
 type Problem struct {
@@ -53,19 +51,4 @@ func Present(i int, p Problem) bool {
 	var answer string
 	fmt.Scanf("%s\n", &answer)
 	return answer == p.A
-}
-
-func GetProblem() Problem {
-	rand.Seed(time.Now().UnixNano()) // Seed to ensure different results
-
-	num1 := rand.Intn(1000) // Generate a number between 0 and 999
-	num2 := rand.Intn(1000)
-
-	question := fmt.Sprintf("%d + %d = ?", num1, num2)
-	answer := fmt.Sprintf("%d", num1+num2)
-
-	return Problem{
-		Q: question,
-		A: answer,
-	}
 }
