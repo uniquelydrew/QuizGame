@@ -52,3 +52,14 @@ func Present(i int, p Problem) bool {
 	fmt.Scanf("%s\n", &answer)
 	return answer == p.A
 }
+
+func SelectOperation() string {
+	fmt.Println("Choose the operation you want to quiz: \nAddition\nSubtraction\nMultiplication\nDivision")
+	var operation string
+	scanf, err := fmt.Scanf("%s\n", &operation)
+	if err != nil {
+		fmt.Printf("Failed to parse the %d input: %s\n", scanf, err)
+		SelectOperation()
+	}
+	return strings.ToLower(operation)
+}
